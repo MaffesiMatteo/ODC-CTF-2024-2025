@@ -1,0 +1,40 @@
+from pwn import *
+import numpy as np
+
+kkk = "babuzz"
+
+magic0 = [0x1B, 0x51, 0x17, 0x2A, 0x1E, 0x4E, 0x3D, 0x10, 0x17, 0x46, 0x49, 0x14, 0x3D]
+
+result1 = ""
+for i in range(0,13):
+    res = (magic0[i]) ^ ord(kkk[i%6])
+    result1 += chr(res)
+
+print(result1)
+
+magic1 = [0xEB,
+0x51,
+0xB0,
+0x13,
+0x85,
+0xB9,
+0x1C,
+0x87,
+0xB8,
+0x26,
+0x8D,
+0x7]
+
+
+v4 = -69
+
+result2 = ""
+for i in range(0,12):
+    result2 += chr((magic1[i]-v4) & 0xFF)
+    v4 = magic1[i]
+    
+
+print(result2)
+
+print("flag{"+result1+result2+"}")
+

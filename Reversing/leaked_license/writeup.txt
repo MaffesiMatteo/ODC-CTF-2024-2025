@@ -1,0 +1,7 @@
+breakpoint in 0x12C1 that correspond to the assign of variable v14, inside there is the license split by 8 characters:
+
+start_license_split = ["f3ed47e2","6e4de24a","41498194","5c7da2d","b1ac93d5"]
+
+substitute every piece of the starting license with the corresponding of the target license
+
+license_split = ["726cfc2d","26c6defe","db065621","99f5c7d0","da4f4930"]
